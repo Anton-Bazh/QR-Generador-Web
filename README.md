@@ -93,15 +93,6 @@ Para desplegar el proyecto en Heroku, asegúrate de incluir los siguientes archi
   python-3.9.6
   ```
 
-Luego, utiliza los siguientes comandos:
-```bash
-heroku create
-heroku git:remote -a nombre_de_tu_app
-heroku config:set FLASK_ENV=production
-heroku buildpacks:add heroku/python
-git push heroku main
-```
-
 ---
 
 ## Funcionalidades Adicionales
