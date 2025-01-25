@@ -132,8 +132,18 @@ Ejemplos de pantallas del proyecto:
 
 ---
 
-## Repositorio del Proyecto
+## Créditos y Contacto
 
-Encuentra el código fuente del proyecto en el siguiente enlace:
-[QR-Generador-Web](https://github.com/Anton-Bazh/QR-Generador-Web)
+Este proyecto fue desarrollado por [Antonio Baeza T.](https://github.com/Anton-Bazh). Si tienes alguna pregunta, sugerencia o simplemente quieres saludar, no dudes en contactarme:
 
+- **GitHub**: [Anton-Bazh](https://github.com/Anton-Bazh)
+- **Instagram**: [@baeza.doc](https://www.instagram.com/baeza.doc/)
+- **LinkedIn**: [Antonio Baeza T.](https://www.linkedin.com/in/antoniobaezat/)
+
+¿Te ha gustado este proyecto? ¡Tu apoyo siempre es bienvenido! 🌟
+
+- **Propinas**: [Invítame un café ☕](https://www.paypal.com/paypalme/AntonioBaeza0)
+
+---
+
+¡Gracias por apoyar este proyecto! Espero que lo disfrutes tanto como yo disfruté desarrollarlo. 🚀
