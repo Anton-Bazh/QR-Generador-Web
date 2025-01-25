@@ -1,0 +1,304 @@
+/* Estilos globales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1A2634; /* Azul oscuro, serio pero elegante */
+    color: #D1D8E0; /* Gris claro, suave para los textos */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Encabezados */
+h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: #4A90E2; /* Azul cálido, pero oscuro */
+    animation: fadeIn 2s ease-out;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #A0AEC0; /* Gris suave */
+}
+
+/* Contenedor principal */
+main {
+    flex: 1;
+    padding: 50px 20px;
+    box-sizing: border-box;
+}
+
+/* Flexbox para el formulario */
+.form-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.form-section {
+    background: linear-gradient(135deg, #2C3E50, #34495E); /* Azul oscuro, gradiente sutil */
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.form-section:hover {
+    transform: scale(1.05);
+}
+
+/* Responsividad */
+@media (max-width: 767px) {
+    .form-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-section {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .qr-example img, .modal-content {
+        max-width: 90%;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+
+    .donate-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .close-btn {
+        font-size: 2rem;
+    }
+}
+
+/* Estilo de botones y campos de formulario */
+input, select, button, textarea {
+    margin: 12px 0;
+    padding: 12px;
+    font-size: 16px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #2C3E50; /* Azul oscuro */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #34495E; /* Azul más claro */
+}
+
+textarea {
+    height: 150px;
+    resize: vertical;
+    background-color: #F1F6F9; /* Gris claro para el fondo */
+    color: #333;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+textarea:focus {
+    outline: none;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4);
+    background-color: #fff;
+}
+
+/* Estilo para la imagen de ejemplo */
+.qr-example {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.qr-example img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 5px;
+}
+
+/* Estilo del botón de descarga */
+.download-btn {
+    display: inline-block;
+    background-color: #34495E; /* Azul más claro */
+    color: white;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #5A8CFF; /* Azul más brillante */
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes modalBounce {
+    0% { transform: scale(0.7); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Sección de Limitaciones */
+.limitations-section, .info-section {
+    padding: 30px 20px;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.1); /* Fondo más suave */
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.limitations-section .section-title {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #A0AEC0; /* Gris suave */
+}
+
+.limitations-section .limitation {
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.limitations-section .limitation-header i {
+    font-size: 1.8rem;
+    margin-right: 15px;
+    color: #A0AEC0; /* Gris suave */
+}
+
+.limitations-section .limitation-header h3 {
+    font-size: 1.4rem;
+    color: #A0AEC0; /* Gris suave */
+}
+
+.limitations-section .limitation p {
+    font-size: 1.1rem;
+    color: #ddd;
+}
+
+/* Footer siempre al fondo */
+footer {
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: auto;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Estilos para el modal de donación */
+.donation-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    width: 450px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    animation: modalBounce 0.6s ease-out;
+}
+
+.modal-content h2 {
+    color: #4A90E2; /* Azul cálido */
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.modal-content p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.donate-btn {
+    background-color: #4A90E2; /* Azul cálido */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    margin-top: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.donate-btn:hover {
+    background-color: #5A8CFF; /* Azul más claro */
+    transform: scale(1.05);
+}
+
+.donate-btn:active {
+    transform: scale(0.95);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 2.5rem;
+    color: #333;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #A0AEC0; /* Gris suave */
+}
+
+/* Estilo para imagen de QR */
+#qr-result img {
+    max-width: 100%;
+    max-height: 300px;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+}
