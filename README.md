@@ -122,13 +122,13 @@ Ejemplos de pantallas del proyecto:
 
 ## 🌟 **Créditos y Contacto** 🌟
 
-Este proyecto fue **desarrollado con mucho cariño** por [Antonio Baeza T.](https://github.com/Anton-Bazh). Si tienes alguna pregunta, sugerencia o simplemente quieres saludar, ¡no dudes en contactarme! 😊
+Este proyecto fue **desarrollado con pasión** por [Antonio Baeza T.](https://github.com/Anton-Bazh). Si tienes alguna pregunta, sugerencia o simplemente quieres saludar, ¡estoy disponible! 😊
 
 ### 📲 **Conéctate conmigo:**
 
-- **GitHub**: [Anton-Bazh](https://github.com/Anton-Bazh)  
-- **Instagram**: [@baeza.doc](https://www.instagram.com/baeza.doc/)  
-- **LinkedIn**: [Antonio Baeza T.](https://www.linkedin.com/in/antoniobaezat/)
+[![GitHub](https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Anton-Bazh)  
+[![Instagram](https://img.shields.io/badge/Instagram-DC3175?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/baeza.doc/)  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/antoniobaezat/)
 
 ---
 
@@ -136,8 +136,8 @@ Este proyecto fue **desarrollado con mucho cariño** por [Antonio Baeza T.](http
 
 ¡Tu apoyo siempre es bienvenido! 🙌 Si crees que este proyecto puede ser útil, no dudes en dejarme un comentario o compartirlo.
 
-- **💖 Propinas**: [Invítame un café ☕](https://www.paypal.com/paypalme/AntonioBaeza0)
+[![Buy Me A Coffee](https://img.shields.io/badge/Inv%C3%ADtame%20un%20cafe-%23FF813F?style=for-the-badge&logo=buy-me-a-coffee&logoColor=white)](https://www.paypal.com/paypalme/AntonioBaeza0)
 
 ---
 
-Gracias por ser parte de esta aventura y por tu apoyo continuo. ¡Vamos por más! 🚀
+Gracias por ser parte de esta aventura. ¡Tu apoyo es lo que me motiva a seguir! 🚀
