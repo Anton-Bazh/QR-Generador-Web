@@ -1,82 +1,139 @@
 # QR-Generador-Web
 
-El proyecto **QR-Generador-Web** es una aplicación web que permite a los usuarios generar códigos QR personalizados de manera rápida y eficiente. Los usuarios pueden elegir entre varios estilos de módulos para el código QR, y la imagen generada no se guarda en el servidor, sino que se maneja en el caché y se envía como una imagen base64 para su descarga.
+El proyecto **QR-Generador-Web** es una aplicación web diseñada para que los usuarios puedan generar códigos QR personalizados de manera rápida y eficiente. La aplicación se enfoca en la simplicidad y la privacidad, ya que las imágenes generadas no se almacenan en el servidor, sino que se manejan en el caché y se envían como una imagen base64 para su descarga.
+
+---
+
+## Características Principales
+
+- **Generación Personalizada**: Permite personalizar el estilo de los módulos del QR (círculos, cuadrados, barras, entre otros).
+- **Privacidad Garantizada**: Las imágenes generadas no se almacenan en el servidor.
+- **Interfaz Amigable**: Diseño intuitivo para una experiencia de usuario fluida.
+- **Optimización de Recursos**: Manejo eficiente de imágenes mediante cadenas base64.
+- **Compatibilidad**: Desplegable localmente o en plataformas en la nube como Heroku.
+
+---
 
 ## Tecnologías Utilizadas
 
-- **Flask**: Framework ligero para la creación de aplicaciones web en Python.
-- **qrcode**: Librería de Python para generar códigos QR.
-- **HTML/CSS/JS**: Para la estructura, el estilo y la interactividad en el frontend.
-- **Heroku** *(opcional)*: Para el despliegue de la aplicación en la nube.
+- **Backend**:
+  - Flask: Framework ligero y flexible para la creación de aplicaciones web en Python.
+  - qrcode: Librería de Python para la generación de códigos QR con estilos avanzados.
+- **Frontend**:
+  - HTML5, CSS3 y JavaScript: Para el diseño y la interactividad de la interfaz de usuario.
+- **Despliegue**:
+  - Heroku *(opcional)*: Plataforma en la nube para el despliegue de aplicaciones.
+- **Otros**:
+  - Gunicorn: Servidor WSGI para ejecutar aplicaciones Flask en producción.
+
+---
 
 ## Instalación
 
-Sigue estos pasos para ejecutar el proyecto localmente:
+Sigue estos pasos para configurar el proyecto en tu máquina local:
 
-1. **Clonar el repositorio**
-   
-   Si aún no has clonado el repositorio, utiliza el siguiente comando:
+1. **Clonar el repositorio**:
    ```bash
    git clone https://github.com/Anton-Bazh/QR-Generador-Web.git
    ```
 
-2. **Instalar dependencias**
-   
-   Asegúrate de tener Python y pip instalados. Luego, instala las dependencias necesarias desde el archivo `requirements.txt`:
+2. **Crear un entorno virtual** *(opcional pero recomendado)*:
+   ```bash
+   python -m venv env
+   source env/bin/activate   # Para sistemas Unix
+   env\Scripts\activate    # Para Windows
+   ```
+
+3. **Instalar dependencias**:
+   Asegúrate de tener Python y pip instalados. Luego, instala las dependencias desde el archivo `requirements.txt`:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Ejecutar la aplicación**
-   
-   Después de instalar las dependencias, puedes iniciar el servidor Flask ejecutando:
+4. **Configurar variables de entorno**:
+   Si necesitas configuraciones específicas, crea un archivo `.env` para definir variables como `FLASK_ENV` o claves de API.
+
+5. **Ejecutar la aplicación**:
    ```bash
    python app.py
    ```
-   Esto iniciará la aplicación en `http://127.0.0.1:5000`, donde podrás acceder a la interfaz web y generar códigos QR.
+   Accede a la aplicación desde tu navegador en `http://127.0.0.1:5000`.
+
+---
 
 ## Detalles Técnicos y Flujo del Proyecto
 
 ### Flask como Framework Web
 
-El proyecto utiliza Flask para manejar las rutas y las solicitudes HTTP. Las principales rutas son:
+Flask se encarga de manejar las rutas y las solicitudes HTTP. Las rutas principales incluyen:
 
-- `/`: Muestra la interfaz de usuario para interactuar con la aplicación.
-- `/crear_qr`: Recibe los datos del usuario (como el texto y el estilo del QR), genera el código QR y devuelve la imagen como una cadena base64.
+- `/`: Muestra la página principal con el formulario para ingresar texto y personalizar el QR.
+- `/crear_qr`: Procesa los datos del formulario, genera el código QR y devuelve la imagen como una cadena base64.
 
 ### Generación del Código QR
 
-El proyecto utiliza la librería **qrcode** para crear los códigos QR. Los estilos de los módulos del QR (como círculos, cuadrados, barras) se configuran mediante la librería `qrcode.image.styles.moduledrawers`.
+El sistema utiliza la librería `qrcode` junto con `qrcode.image.styles.moduledrawers` para aplicar estilos personalizados a los módulos del código QR. Esto incluye opciones como:
 
-En lugar de guardar la imagen en el servidor, el QR se convierte a base64 y se devuelve al navegador. Esto permite al usuario descargar el código QR sin necesidad de almacenamiento en el servidor.
+- **Círculos**
+- **Cuadrados**
+- **Barras horizontales**
 
-### Uso de Procfile y runtime.txt
+La imagen generada se convierte a formato base64, eliminando la necesidad de almacenamiento en el servidor y mejorando la privacidad.
 
-Si decides desplegar el proyecto en Heroku, los siguientes archivos son necesarios:
+### Despliegue en Heroku
 
-- **Procfile**: Indica a Heroku cómo ejecutar la aplicación. Contiene la línea:
+Para desplegar el proyecto en Heroku, asegúrate de incluir los siguientes archivos:
+
+- **Procfile**:
   ```text
-  web: python app.py
+  web: gunicorn app:app
   ```
-
-- **runtime.txt**: Define la versión de Python a usar en Heroku. Ejemplo:
+- **runtime.txt**:
   ```text
   python-3.9.6
   ```
 
-## Funcionalidad de la Aplicación
+Luego, utiliza los siguientes comandos:
+```bash
+heroku create
+heroku git:remote -a nombre_de_tu_app
+heroku config:set FLASK_ENV=production
+heroku buildpacks:add heroku/python
+git push heroku main
+```
 
-- **Generación de QR**: Los usuarios pueden ingresar texto y elegir entre varios estilos de códigos QR (por ejemplo, círculos, cuadrados, barras horizontales, etc.).
-- **Descarga directa**: La imagen generada se devuelve como una cadena base64, lista para ser descargada.
-- **Sin almacenamiento en el servidor**: La aplicación maneja las imágenes QR generadas en el caché, enviándolas directamente al cliente.
+---
+
+## Funcionalidades Adicionales
+
+- **Compatibilidad con Dispositivos Móviles**: Interfaz adaptable para ser utilizada en smartphones y tablets.
+- **Historial Local** *(opcional)*: Almacena temporalmente los últimos códigos QR generados en el navegador del usuario usando localStorage.
+- **Soporte Multilingüe**: Posibilidad de agregar traducciones para ampliar el alcance de la aplicación.
+
+---
 
 ## Imágenes del Proyecto
 
-Pantallas del proyecto:
-- ![Pantalla principal](static/image/pantalla.png)
-- ![Pantalla generador](static/image/pantalla2.png)
+Ejemplos de pantallas del proyecto:
+
+- **Pantalla principal**
+  ![Pantalla principal](static/image/pantalla.png)
+
+- **Generación de código QR**
+  ![Pantalla generador](static/image/pantalla2.png)
+
+---
+
+## Futuras Mejoras
+
+- **Opciones de Exportación**: Permitir exportar los códigos QR en formatos adicionales como SVG o PDF.
+- **Estilos Avanzados**: Incorporar degradados y colores personalizados en los códigos QR.
+- **Analítica de Uso**: Añadir métricas para rastrear la frecuencia y popularidad de estilos generados.
+
+---
 
 ## Repositorio del Proyecto
 
-Puedes encontrar el código fuente del proyecto en el siguiente enlace:
-[https://github.com/Anton-Bazh/QR-Generador-Web](https://github.com/Anton-Bazh/QR-Generador-Web)
+Encuentra el código fuente del proyecto en el siguiente enlace:
+[QR-Generador-Web](https://github.com/Anton-Bazh/QR-Generador-Web)
+
