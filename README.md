@@ -122,7 +122,7 @@ Ejemplos de pantallas del proyecto:
 
 ## 🌟 **Créditos y Contacto** 🌟
 
-Este proyecto fue **desarrollado con pasión** por [Antonio Baeza T.](https://github.com/Anton-Bazh). Si tienes alguna pregunta, sugerencia o simplemente quieres saludar, ¡estoy disponible! 😊
+Este proyecto fue **desarrollado con pasión** por [Antonio B](https://github.com/Anton-Bazh). Si tienes alguna pregunta, sugerencia o simplemente quieres saludar, ¡estoy disponible! 😊
 
 ### 📲 **Conéctate conmigo:**
 
