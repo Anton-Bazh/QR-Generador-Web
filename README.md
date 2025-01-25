@@ -116,10 +116,7 @@ git push heroku main
 
 Ejemplos de pantallas del proyecto:
 
-- **Pantalla principal**
   ![Pantalla principal](static/image/pantalla.png)
-
-- **Generación de código QR**
   ![Pantalla generador](static/image/pantalla2.png)
 
 ---
