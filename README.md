@@ -120,25 +120,24 @@ Ejemplos de pantallas del proyecto:
 
 ---
 
-## 🎉 Créditos y Contacto
+## 🌟 **Créditos y Contacto** 🌟
 
-Este proyecto fue desarrollado con ❤️ por [Antonio Baeza T.](https://github.com/Anton-Bazh). Si tienes alguna pregunta, sugerencia o simplemente quieres saludar, ¡estoy a tu disposición!
+Este proyecto fue **desarrollado con mucho cariño** por [Antonio Baeza T.](https://github.com/Anton-Bazh). Si tienes alguna pregunta, sugerencia o simplemente quieres saludar, ¡no dudes en contactarme! 😊
 
-### 📱 Encuéntrame en:
+### 📲 **Conéctate conmigo:**
 
 - **GitHub**: [Anton-Bazh](https://github.com/Anton-Bazh)  
 - **Instagram**: [@baeza.doc](https://www.instagram.com/baeza.doc/)  
 - **LinkedIn**: [Antonio Baeza T.](https://www.linkedin.com/in/antoniobaezat/)
 
-### 🌟 ¿Te ha gustado este proyecto?
+---
 
-¡Tu apoyo siempre es bienvenido! 💪
+### 💡 **¿Te ha gustado este proyecto?**
 
-- **Propinas**: [Invítame un café ☕](https://www.paypal.com/paypalme/AntonioBaeza0)
+¡Tu apoyo siempre es bienvenido! 🙌 Si crees que este proyecto puede ser útil, no dudes en dejarme un comentario o compartirlo.
 
-¡Gracias por tu apoyo y por ser parte de este proyecto! 🚀
-
+- **💖 Propinas**: [Invítame un café ☕](https://www.paypal.com/paypalme/AntonioBaeza0)
 
 ---
 
-¡Gracias por apoyar este proyecto! Espero que lo disfrutes tanto como yo disfruté desarrollarlo. 🚀
+Gracias por ser parte de esta aventura y por tu apoyo continuo. ¡Vamos por más! 🚀
