@@ -1,0 +1,49 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+
+# Flask instance & env
+instance/
+.env
+.env.*
+
+# IDEs / editors
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Tests / coverage
+.coverage
+.pytest_cache/
+
+# Database
+*.sqlite3
+*.db
+
+# Logs
+*.log
+
+# Python compiled
+*.pyc
+
+# Node / npm
+node_modules/
+
+# Para no subir imágenes grandes (descomenta si quieres ignorarlas)
+# src/static/image/
+
