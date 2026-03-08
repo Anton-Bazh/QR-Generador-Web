@@ -63,6 +63,21 @@
                             <option value="6" selected>◼️ Cuadrado Clásico</option>
                         </select>
                     </div>
+
+                    <div class="form-group color-pickers" style="display: flex; gap: var(--spacing-md); width: 100%;">
+                        <div style="flex: 1;">
+                            <label for="color_dark" class="form-label" style="font-size: 0.85rem;">
+                                <i class="fas fa-brush"></i> Color QR:
+                            </label>
+                            <input type="color" id="color_dark" name="color_dark" value="#000000" class="form-color-picker" style="width: 100%; height: 40px; padding: 2px; cursor: pointer; border-radius: var(--border-radius); border: 1px solid rgba(255,255,255,0.1); background: var(--bg-glass);">
+                        </div>
+                        <div style="flex: 1;">
+                            <label for="color_light" class="form-label" style="font-size: 0.85rem;">
+                                <i class="fas fa-fill-drip"></i> Fondo:
+                            </label>
+                            <input type="color" id="color_light" name="color_light" value="#FFFFFF" class="form-color-picker" style="width: 100%; height: 40px; padding: 2px; cursor: pointer; border-radius: var(--border-radius); border: 1px solid rgba(255,255,255,0.1); background: var(--bg-glass);">
+                        </div>
+                    </div>
                     
                     <div class="form-group">
                         <label for="nombre" class="form-label">

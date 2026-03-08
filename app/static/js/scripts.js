@@ -128,6 +128,9 @@ async function crearQR() {
         return;
     }
 
+    const colorDark = formData.get('color_dark') || '#000000';
+    const colorLight = formData.get('color_light') || '#FFFFFF';
+
     // Mostrar indicador de carga
     mostrarLoading(true);
 
@@ -143,7 +146,9 @@ async function crearQR() {
             body: JSON.stringify({
                 texto: texto,
                 tipo: tipo,
-                nombre: nombre
+                nombre: nombre,
+                color_dark: colorDark,
+                color_light: colorLight
             }),
             signal: controller.signal
         });

@@ -1,6 +1,8 @@
-from flask import Blueprint, render_template, request, session, redirect, url_for, flash, current_app
+from flask import Blueprint, render_template, request, session, redirect, url_for, flash, current_app, Response
 from werkzeug.security import generate_password_hash, check_password_hash
 from app.utils.db import get_db
+import csv
+import io
 
 admin_bp = Blueprint('admin', __name__)
 
@@ -84,5 +86,34 @@ def delete_user(user_id):
     db.commit()
     db.close()
     flash('Usuario eliminado exitosamente.', 'success')
-    
     return redirect(url_for('admin.dashboard'))
+
+@admin_bp.route('/dashboard/export_csv')
+def export_csv():
+    if not session.get('admin_logged_in'):
+        return redirect(url_for('admin.login'))
+        
+    db = get_db(current_app)
+    # Selecciona todo el historial
+    rows = db.execute('SELECT id, nombre, tipo, texto, fecha FROM qr_history ORDER BY fecha DESC').fetchall()
+    db.close()
+    
+    # Crear un buffer en memoria y escritor CSV
+    output = io.StringIO()
+    writer = csv.writer(output)
+    
+    # Escribir cabeceras
+    writer.writerow(['ID', 'Nombre', 'Tipo', 'Contenido', 'Fecha de Generación'])
+    
+    # Escribir datos
+    for row in rows:
+        writer.writerow([row['id'], row['nombre'], row['tipo'], row['texto'], row['fecha']])
+        
+    csv_data = output.getvalue()
+    
+    # Retornar como archivo descargable
+    return Response(
+        csv_data,
+        mimetype="text/csv",
+        headers={"Content-disposition": "attachment; filename=historial_qr.csv"}
+    )

@@ -31,12 +31,14 @@ def crear_qr():
         texto = data.get("texto", "").strip()
         tipo = data.get("tipo", 6)
         nombre = sanitize_filename(data.get("nombre", "qr_default"))
+        color_dark = data.get("color_dark", "#000000")
+        color_light = data.get("color_light", "#FFFFFF")
         
         is_valid, errors = validate_qr_input(texto, tipo, nombre)
         if not is_valid:
             return jsonify({"error": "; ".join(errors)}), 400
             
-        img, qr_version = generate_qr_image(texto, tipo)        
+        img, qr_version = generate_qr_image(texto, tipo, color_dark, color_light)        
         
         # Save to database
         try:

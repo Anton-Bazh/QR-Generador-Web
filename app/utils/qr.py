@@ -41,23 +41,34 @@ def validate_qr_input(texto, tipo, nombre):
         errors.append(f"Tipo de QR no válido. Debe ser entre 1 y 6")
     return len(errors) == 0, errors
 
-def generate_qr_image(texto, tipo):
-    """Función unificada para generar QR"""
+from qrcode.image.styles.colormasks import SolidFillColorMask
+
+def generate_qr_image(texto, tipo, color_dark="#000000", color_light="#FFFFFF"):
+    """Función unificada para generar QR con colores"""
     try:
+        # Extraer colores (hex a rgb)
+        color_dark = color_dark.lstrip('#')
+        color_light = color_light.lstrip('#')
+        
+        # Validar largo y proveer defaults si son opacos
+        fg = tuple(int(color_dark[i:i+2], 16) for i in (0, 2, 4)) if len(color_dark) == 6 else (0, 0, 0)
+        bg = tuple(int(color_light[i:i+2], 16) for i in (0, 2, 4)) if len(color_light) == 6 else (255, 255, 255)
+
         qr = qrcode.QRCode(
             version=None,
-            error_correction=qrcode.constants.ERROR_CORRECT_M,
+            error_correction=qrcode.constants.ERROR_CORRECT_H, # High por si se le añade un logo en el futuro
             box_size=10,
             border=4,
         )
         qr.add_data(texto)
         qr.make(fit=True)
-        drawer = QR_DRAWERS.get(tipo, SquareModuleDrawer())        
+        drawer = QR_DRAWERS.get(tipo, SquareModuleDrawer())
+        color_mask = SolidFillColorMask(back_color=bg, front_color=fg)
+        
         img = qr.make_image(
             image_factory=StyledPilImage, 
             module_drawer=drawer,
-            fill_color="black",
-            back_color="white"
+            color_mask=color_mask
         )
         return img, qr.version
     except Exception as e:
