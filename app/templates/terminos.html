@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos de Uso - Generador QR</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .page-content {
+            max-width: 800px;
+            margin: var(--spacing-xl) auto;
+            padding: var(--spacing-lg);
+            background: var(--bg-secondary);
+            backdrop-filter: blur(16px);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-glass);
+        }
+        .page-content p {
+            margin-bottom: var(--spacing-md);
+            color: var(--text-light);
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-blue);
+            text-decoration: none;
+            margin-bottom: var(--spacing-lg);
+            font-weight: 500;
+        }
+        .back-link:hover {
+            color: var(--accent-light-blue);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><i class="fas fa-file-contract"></i> Términos de Uso</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-content">
+            <a href="{{ url_for('main.index') }}" class="back-link"><i class="fas fa-arrow-left"></i> Volver al inicio</a>
+            
+            <h2>1. Aceptación de los Términos</h2>
+            <p>Al acceder y utilizar este generador de códigos QR, aceptas cumplir con los presentes Términos de Uso. Si no estás de acuerdo con alguna parte de los términos, no deberías utilizar nuestro servicio.</p>
+            
+            <h2>2. Uso del Servicio</h2>
+            <p>Este servicio se proporciona de forma gratuita para uso personal y comercial. Queda estrictamente prohibido utilizar la herramienta para generar códigos QR que enlacen a contenido malicioso, ilegal, spam o que viole derechos de terceros. Nos reservamos el derecho de bloquear el acceso a usuarios que incumplan esta norma.</p>
+
+            <h2>3. Disponibilidad y Responsabilidad</h2>
+            <p>El servicio se ofrece "tal cual" (as is) y "según disponibilidad". No garantizamos que el servicio sea ininterrumpido o libre de errores. No nos hacemos responsables por daños directos, indirectos o de cualquier tipo resultantes del uso o la imposibilidad de uso, o por la pérdida de datos asociados a los códigos QR generados.</p>
+            
+            <h2>4. Modificaciones a los Términos</h2>
+            <p>Nos reservamos el derecho de modificar estos términos en cualquier momento. El uso continuado de la plataforma tras los cambios constituye la aceptación de los nuevos términos.</p>
+        </div>
+    </main>
+</body>
+</html>

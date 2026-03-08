@@ -68,6 +68,24 @@ function initializeApp() {
             });
         }
     }
+
+    // Lógica para Preguntas Frecuentes (FAQ Accordion)
+    const faqItems = document.querySelectorAll('.faq-item');
+    if (faqItems.length > 0) {
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Cerrar las otras
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle en la actual
+                item.classList.toggle('active');
+            });
+        });
+    }
 }
 
 function updateCharacterCount(count) {
@@ -186,16 +204,22 @@ function mostrarQR(data) {
     const downloadLink = document.createElement('a');
     downloadLink.href = data.image_base64;
     downloadLink.download = data.filename;
-    downloadLink.textContent = '📥 Descargar QR';
+    downloadLink.innerHTML = '<i class="fas fa-download"></i> Descargar QR';
     downloadLink.className = 'download-btn';
     
     // Botón de copiar (opcional)
     const copyBtn = document.createElement('button');
-    copyBtn.textContent = '📋 Copiar Imagen';
-    copyBtn.className = 'copy-btn';
+    copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copiar Imagen';
+    copyBtn.className = 'download-btn'; // Use same styling as download
+    copyBtn.style.background = 'rgba(255, 255, 255, 0.05)';
     copyBtn.addEventListener('click', function() {
         copiarImagen(data.image_base64);
     });
+    
+    actionsContainer.style.display = 'flex';
+    actionsContainer.style.gap = '10px';
+    actionsContainer.style.justifyContent = 'center';
+    actionsContainer.style.marginTop = '15px';
     
     actionsContainer.appendChild(downloadLink);
     actionsContainer.appendChild(copyBtn);
@@ -270,9 +294,13 @@ function mostrarMensaje(mensaje, tipo = 'info') {
     // Crear nuevo mensaje
     const toast = document.createElement('div');
     toast.className = `message-toast ${tipo}`;
+    
+    // Iconos de FontAwesome
+    const iconClass = tipo === 'success' ? 'fas fa-check-circle' : 'fas fa-exclamation-circle';
+    
     toast.innerHTML = `
-        <div class="toast-content">
-            <span class="toast-icon">${tipo === 'success' ? '✅' : '❌'}</span>
+        <div class="toast-content" style="display: flex; align-items: center; gap: 10px;">
+            <i class="${iconClass}" style="font-size: 1.2rem;"></i>
             <span class="toast-message">${mensaje}</span>
         </div>
     `;

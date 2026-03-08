@@ -280,14 +280,15 @@
                     <li><a href="#limitations-section">Información Técnica</a></li>
                     <li><a href="https://github.com/Anton-Bazh" target="_blank">GitHub</a></li>
                     <li><a href="#" id="show-donation-modal">Apoyar el Proyecto</a></li>
+                    <li><a href="{{ url_for('admin.login') }}">Panel de Control</a></li>
                 </ul>
             </div>
             
             <div class="footer-section">
                 <h4>Legal</h4>
                 <ul>
-                    <li><a href="#" id="privacy-link">Privacidad</a></li>
-                    <li><a href="#" id="terms-link">Términos de Uso</a></li>
+                    <li><a href="{{ url_for('main.privacidad') }}">Privacidad</a></li>
+                    <li><a href="{{ url_for('main.terminos') }}">Términos de Uso</a></li>
                 </ul>
             </div>
         </div>

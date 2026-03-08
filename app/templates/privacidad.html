@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad - Generador QR</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .page-content {
+            max-width: 800px;
+            margin: var(--spacing-xl) auto;
+            padding: var(--spacing-lg);
+            background: var(--bg-secondary);
+            backdrop-filter: blur(16px);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-glass);
+        }
+        .page-content p {
+            margin-bottom: var(--spacing-md);
+            color: var(--text-light);
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-blue);
+            text-decoration: none;
+            margin-bottom: var(--spacing-lg);
+            font-weight: 500;
+        }
+        .back-link:hover {
+            color: var(--accent-light-blue);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><i class="fas fa-shield-alt"></i> Política de Privacidad</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-content">
+            <a href="{{ url_for('main.index') }}" class="back-link"><i class="fas fa-arrow-left"></i> Volver al inicio</a>
+            
+            <h2>1. Información que Recopilamos</h2>
+            <p>Este generador de códigos QR no requiere registro de usuario. Recopilamos únicamente los datos que ingresas temporalmente para la generación del código QR (texto, URL, email, etc.).</p>
+            
+            <h2>2. Uso de la Información</h2>
+            <p>La información ingresada es procesada por el servidor exclusivamente con el propósito de generar la imagen del código QR solicitada. Mantenemos un registro básico de actividad (historial) con fines analíticos y estadísticos, el cual puedes revisar en el panel de administración, pero los QR generados o subidos no quedan permanentemente alojados para uso público.</p>
+
+            <h2>3. Almacenamiento y Seguridad</h2>
+            <p>Implementamos medidas de seguridad para proteger la información contra acceso no autorizado, alteración o destrucción. Los datos se almacenan en una base de datos local y no son compartidos con terceros en forma alguna.</p>
+            
+            <h2>4. Consentimiento</h2>
+            <p>Al utilizar nuestra herramienta, aceptas esta política de privacidad y el procesamiento temporal de tu información para el propósito establecido.</p>
+        </div>
+    </main>
+</body>
+</html>
